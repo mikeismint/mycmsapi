@@ -8,4 +8,5 @@ class JsonView {
   }
 
 } // END CLASS JsonView
+
 ?>

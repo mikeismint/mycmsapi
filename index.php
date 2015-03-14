@@ -23,6 +23,9 @@ $router->addroutes( array(
   // Get post by title
   array( 'GET', '/^posts\/title\/(?P<title>\w+)$/', 'PostController#getByTitle' ),
 
+  // Get list of pages
+  array( 'GET', '/^pages$/', 'PageController#getList' ),
+
   /*
    * POST routes
    */

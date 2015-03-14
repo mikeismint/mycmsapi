@@ -78,7 +78,6 @@ class Router {
         foreach( $match as $key => $value ) {
           if( is_numeric( $key )) unset( $match[$key]);
         }
-        print_r( $match );
 
         explode( '#', $action );
         list( $Controller, $method ) = explode( '#', $action );

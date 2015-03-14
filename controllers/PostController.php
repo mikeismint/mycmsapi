@@ -1,11 +1,15 @@
 <?php
 
-class PostController {
+class PostController extends BaseController {
 
-  private $viewType;
-
+  /**
+   * Properties
+   *
+   * $viewType  Inherited from BaseController
+   */
+  
   public function __construct( $setView="Json" ) {
-    $this->viewType = $setView;
+    parent::__construct( $setView );
   }
 
   /**
@@ -41,7 +45,7 @@ class PostController {
    * @return  void
    */
   public function getPageList ( $page, $numrows=1000000 ) {
-  if ( strcmp( ucfirst( $page ), "All" ) == 0) {
+    if ( strcmp( ucfirst( $page ), "All" ) == 0) {
       $page = null;
     }
     $result = PostModel::getList( $page, $numrows );
