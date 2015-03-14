@@ -1,10 +1,11 @@
-<<<<<<< HEAD
-/posts/                     #list all posts
-/:page/                     #list posts by page
-/[posts|:page]/int:id             #post by id
-/[posts|:page]/str:title        #list of posts title=:title
-/[posts|:page]/ls/int:num          #list :num of posts
+# MyCMSApi
 
-=======
-# mycmsapi
->>>>>>> c28ecf5d488df8d201782852d77d981882d9e65a
+### Usage
+
+'''php
+GET, /posts/ OR /posts/all     Get ALL posts
+GET, /posts/[page]             Get all posts for specified page
+GET, /posts/[page]/ls/[num]    Get newest [num] of posts for [page]
+GET, /posts/id/[id]            Get post by [id]
+GET, /posts/title/[title]      Get post(s) whos title contains [title]
+'''
