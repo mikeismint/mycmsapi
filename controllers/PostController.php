@@ -7,7 +7,7 @@ class PostController extends BaseController {
    *
    * $viewType  Inherited from BaseController
    */
-  
+
   public function __construct( $setView="Json" ) {
     parent::__construct( $setView );
   }
@@ -62,15 +62,10 @@ class PostController extends BaseController {
    */
   public function getByTitle ( $title ) {
     $result = PostModel::getByTitle( $title );
-    
+
     $this->renderView($result);
   }
 
-  private function renderView ( $result ) {
-    $viewModel = ucfirst( $this->viewType ) . 'View';
-    $view = new $viewModel();
-    $view->render( $result );
-  }
 
 } // END CLASS PostController
 

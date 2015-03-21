@@ -28,12 +28,6 @@ class PageController extends BaseController {
 
     $this->renderView( $result );
   }
-
-  private function renderView ( $result ) {
-    $viewModel = ucfirst( $this->viewType ) . 'View';
-    $view = new $viewModel();
-    $view->render( $result );
-  }
 }
 
 ?>

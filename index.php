@@ -10,10 +10,10 @@ $router->addroutes( array(
   /**
    * GET routes
    */
-  
+
   // Get all posts
   array( 'GET', '/^posts(\/all)*$/', 'PostController#getAll' ),
- 
+
   // Get limited number of posts bu page
   array( 'GET', '/^posts\/(?P<page>\w+)(\/ls\/(?P<num>\d+))*$/', 'PostController#getPageList' ),
 

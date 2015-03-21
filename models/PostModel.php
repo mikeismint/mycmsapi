@@ -2,10 +2,10 @@
 
 class PostModel extends BaseModel {
 
-  /** PROPERTIES ****************/
-  /* Inherited from BaseModel
-   * public $id    = null; // int
-   * public $title = null; // string
+  /**
+   * Properties inherited from BaseModel
+   * public $id    = null;      // int
+   * public $title = null;      // string
    */
   public $pubDate   = null;     // Publication Date
   public $content   = null;     // Main Content
