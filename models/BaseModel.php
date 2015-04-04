@@ -2,19 +2,14 @@
 
 abstract class BaseModel {
 
-  /** PROPERTIES ****************/
-  public $id    = null; // int
-  public $title = null; // string
-
   /**
-   * Methods to be implemented in extending classes
+   * Properties
+   *
+   * public $id     int 
+   * public $title  string
    */
-  /*abstract protected function getList ();
-  abstract protected function getById( $id );
-  abstract protected function getByTitle( $title );
-  abstract protected function insert();
-  abstract protected function update();
-  abstract protected function delete(); */
+  public $id    = null; 
+  public $title = null;
 
   /**
    * Constructor for Model
