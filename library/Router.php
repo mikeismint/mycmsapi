@@ -1,13 +1,24 @@
 <?php
+/**
+ * Router - My first attempt at a PHP router.
+ *
+ * Heavily influenced by dannyvankooten/AltoRouter 
+ *
+ * @author    Mike Wilson
+ */
 
 class Router {
 
   private $requestVerb;
   private $requestURL;
-  private $requestParams;
 
   private $routes = array();
 
+  /**
+   * Create new instance of Router
+   *
+   * Gets HTTP verb and URL from Global $_SERVER variable
+   */ 
   public function __construct () {
     $this->requestVerb = isset($_SERVER['REQUEST_METHOD']) ?
       $_SERVER['REQUEST_METHOD'] : 'GET';
@@ -57,14 +68,22 @@ class Router {
     }
   }
 
+  /**
+   * Execute router.
+   * 
+   * @return  boolean   True if a route is executed
+   *                    False if no routes are found
+   */
   public function go() {
 
     foreach( $this->routes as $route ) {
 
       list( $verb, $pattern, $action, $name ) = $route;
+
       $verbs = explode(  '|', $verb );
       $verbMatch = false;
 
+      // First checks for matching verb
       foreach( $verbs as $verb ) {
         if( strtoupper( $verb ) == $this->requestVerb ) {
           $verbMatch = true;
@@ -72,9 +91,12 @@ class Router {
         }
       }
 
+      // Skip rest of function if verb doesn't match
       if( !$verbMatch ) continue;
 
       if( preg_match( $pattern, $this->requestURL, $match )) {
+
+        // Remove non-named keys from matches
         foreach( $match as $key => $value ) {
           if( is_numeric( $key )) unset( $match[$key]);
         }
@@ -92,7 +114,6 @@ class Router {
                                 action $action" );
         }
       }
-
     }
     return false;
   }
