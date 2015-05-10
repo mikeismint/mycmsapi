@@ -1,8 +1,8 @@
-<?php
+<?php namespace CMS\Library;
 /**
  * Router - My first attempt at a PHP router.
  *
- * Heavily influenced by dannyvankooten/AltoRouter 
+ * Heavily influenced by dannyvankooten/AltoRouter
  *
  * @author    Mike Wilson
  */

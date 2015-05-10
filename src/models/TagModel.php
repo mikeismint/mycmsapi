@@ -1,4 +1,6 @@
-<?php
+<?php namespace Chest\Models;
+
+use \PDO;
 
 class TagModel extends BaseModel {
 
@@ -76,6 +78,5 @@ class TagModel extends BaseModel {
     $this->delete( $id, 'tags' );
   }
 
-}
-
+} // END Class TagModel
 ?>

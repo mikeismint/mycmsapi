@@ -1,4 +1,6 @@
-<?php
+<?php namespace Chest\Models;
+
+use \PDO;
 
 class PostModel extends BaseModel {
 

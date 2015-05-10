@@ -1,4 +1,4 @@
-<?php
+<?php namespace Chest\Controllers;
 
 abstract class BaseController {
 
@@ -19,7 +19,7 @@ abstract class BaseController {
    * @param $result   Date to be returned
    */
   protected function renderView ( $result ) {
-    $viewModel = ucfirst( $this->viewType ) . 'View';
+    $viewModel = 'Chest\\Views\\' . ucfirst( $this->viewType ) . 'View';
     $view = new $viewModel();
     $view->render( $result );
   }

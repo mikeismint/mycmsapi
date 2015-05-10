@@ -1,4 +1,6 @@
-<?php
+<?php namespace Chest\Controllers;
+
+use Chest\Models\PageModel;
 
 class PageController extends BaseController {
 
@@ -26,7 +28,7 @@ class PageController extends BaseController {
       $result[$page->id] = $page->title;
     }
 
-    $this->renderView( $result );
+    $this->renderView( $pages );
   }
 }
 

@@ -17,7 +17,7 @@ define( 'LIBRARY_PATH',     'library/' );
 /**
  * DECLARE AUTOLOADER
  */
-spl_autoload_register( 'apiAutoload' );
+/*spl_autoload_register( 'apiAutoload' );
 function apiAutoload( $classname ) {
   if( preg_match( '/[a-zA-Z]+Controller$/', $classname )) {
     require_once CONTROLLER_PATH . $classname .'.php';
@@ -34,7 +34,8 @@ function apiAutoload( $classname ) {
   }
   return false;
 } // END AUTOLOADER
-
+ */
+#
 /**
  * DECLARE ERROR HANDLER
  */

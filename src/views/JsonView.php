@@ -1,4 +1,4 @@
-<?php
+<?php namespace Chest\Views;
 
 class JsonView {
 

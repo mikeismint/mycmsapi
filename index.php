@@ -1,9 +1,12 @@
-<?php
+<?php 
 
-// Require setting, include autoloader
-require_once( '/library/settings.php' );
+// Require setting
+require_once( './src/settings.php' );
 
-$router = new Router();
+// Require Composer autoloader
+require_once( './vendor/autoload.php' );
+
+$router = new \Fruit\Fruit();
 
 // Declare routes
 $router->addroutes( array(
@@ -12,19 +15,19 @@ $router->addroutes( array(
    */
 
   // Get all posts
-  array( 'GET', '/^posts(\/all)*$/', 'PostController#getAll' ),
+  array( 'GET', '/^posts(\/all)*$/', 'Chest\Controllers\PostController#getAll' ),
 
   // Get limited number of posts bu page
-  array( 'GET', '/^posts\/(?P<page>\w+)(\/ls\/(?P<num>\d+))*$/', 'PostController#getPageList' ),
+  array( 'GET', '/^posts\/(?P<page>\w+)(\/ls\/(?P<num>\d+))*$/', 'Chest\Controllers\PostController#getPageList' ),
 
   //Get post by id
-  array( 'GET', '/^posts\/id\/(?P<id>\d+)$/', 'PostController#getById' ),
+  array( 'GET', '/^posts\/id\/(?P<id>\d+)$/', 'Chest\Controllers\PostController#getById' ),
 
   // Get post by title
-  array( 'GET', '/^posts\/title\/(?P<title>\w+)$/', 'PostController#getByTitle' ),
+  array( 'GET', '/^posts\/title\/(?P<title>\w+)$/', 'Chest\Controllers\PostController#getByTitle' ),
 
   // Get list of pages
-  array( 'GET', '/^pages$/', 'PageController#getList' ),
+  array( 'GET', '/^pages$/', 'Chest\Controllers\PageController#getList' ),
 
   /*
    * POST routes

@@ -1,4 +1,6 @@
-<?php
+<?php namespace Chest\Controllers ;
+
+use Chest\Models\PostModel;
 
 class PostController extends BaseController {
 
@@ -14,7 +16,7 @@ class PostController extends BaseController {
 
   /**
    * Gets all posts
-   *
+   \*
    * @return  void
    */
   public function getAll () {
