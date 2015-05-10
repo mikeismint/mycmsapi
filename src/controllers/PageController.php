@@ -24,10 +24,6 @@ class PageController extends BaseController {
   public function getList() {
     $pages = PageModel::getList();
 
-    foreach( $pages as $page ) {
-      $result[$page->id] = $page->title;
-    }
-
     $this->renderView( $pages );
   }
 }
